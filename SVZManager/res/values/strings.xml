@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SVZManager</string>
+    <string name="sbc">Current SBC State:</string>
+    <string name="buttontext">Toggle SBC State</string>
+    <string name="sbcstate">Wait...</string>
+    <string name="title">Savaged-Zen Manager</string>
+    <string name="version">V1.00</string>
+    <string name="onstart">Apply on phone restart?</string>
+    <string name="sbctitle">SBC Toggle</string>
+    <string name="othertitle">Other Settings</string>
+    <string name="szstatsbuttonremove">Remove SZStats App</string>
+    <string name="szstatsbuttoninstall">Install SZStats App</string>
+</resources>
