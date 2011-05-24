@@ -16,7 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.darkprograms.svzmanager.util.SBCUtil;
-import com.darkprograms.svzmanager.util.SZStatsUtil;
 
 public class StartActivity extends Activity implements OnClickListener {
 	/** Called when the activity is first created. */
@@ -26,10 +25,8 @@ public class StartActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.main);
 		Button button = (Button) findViewById(R.id.sbctoggle);
 		CheckBox toggle = (CheckBox) findViewById(R.id.onstart);
-		Button szstatsbutton = (Button) findViewById(R.id.szstats);
 
 		button.setOnClickListener(this);
-		szstatsbutton.setOnClickListener(this);
 		toggle.setOnClickListener(this);
 
 		// view.setOnFocusChangeListener(this);
@@ -46,7 +43,6 @@ public class StartActivity extends Activity implements OnClickListener {
 		super.onResume();
 		getSBCState();
 		getSBCOnStartState();
-		getSZStatsState();
 
 	}
 
@@ -54,18 +50,6 @@ public class StartActivity extends Activity implements OnClickListener {
 	protected void onPause() {
 		super.onPause();
 
-	}
-
-	private void getSZStatsState() {
-		SZStatsUtil sz = SZStatsUtil.getInstance();
-
-		Button szstatsbutton = (Button) findViewById(R.id.szstats);
-
-		if (sz.getInstallState()) {
-			szstatsbutton.setText(R.string.szstatsbuttonremove);
-		} else {
-			szstatsbutton.setText(R.string.szstatsbuttoninstall);
-		}
 	}
 
 	private void getSBCOnStartState() {
@@ -168,38 +152,15 @@ public class StartActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	private void SZStatsAction() {
-		try {
-			SZStatsUtil sz = SZStatsUtil.getInstance();
-			if (sz.getInstallState()) {
-				sz.deleteApp();
-				Toast.makeText(this, "SZStats app removed", 10000).show();
-			} else {
-				sz.installApp();
-				Toast.makeText(this, "SZStats app installed", 10000).show();
-			}
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			Toast.makeText(this, "Failed to remove/install SZStats", 10000)
-					.show();
-		}
-
-	}
-
 	// Implement the OnClickListener callback
 	public void onClick(View v) {
 
 		if (v.getId() == R.id.sbctoggle) {
 			toggleSBCButton();
-		} else if (v.getId() == R.id.szstats) {
-
-			SZStatsAction();
 		}
 
 		saveOnStart();
 		getSBCState();
-		getSZStatsState();
 	}
 
 }
