@@ -10,7 +10,6 @@
     <TextView android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/sbcstate" android:id="@+id/sbcstate" android:layout_width="wrap_content" android:layout_x="180dip" android:layout_y="134dip"></TextView>
     <TextView android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/sbctitle" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_x="116dip" android:layout_y="96dip"></TextView>
     <TextView android:layout_height="wrap_content" android:textSize="20sp" android:text="@string/othertitle" android:id="@+id/textView5" android:layout_width="wrap_content" android:layout_x="14dip" android:layout_y="270dip"></TextView>
-    <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_x="12dip" android:layout_y="302dip" android:id="@+id/szstats" android:text="@string/szstatsbuttonremove"></Button>
     <Button android:layout_height="wrap_content" android:text="@string/buttontext" android:id="@+id/sbctoggle" android:layout_width="wrap_content" android:layout_x="98dip" android:layout_y="213dip"></Button>
 
 </AbsoluteLayout>
